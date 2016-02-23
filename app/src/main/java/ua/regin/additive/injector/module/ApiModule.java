@@ -5,8 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 import retrofit.GsonConverterFactory;
@@ -26,7 +24,6 @@ public class ApiModule {
     }
 
     @Provides
-    @Singleton
     public Gson provideGson() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.setDateFormat(DATE_FORMAT__NORMAL_WITH_YEAR);
@@ -34,7 +31,6 @@ public class ApiModule {
     }
 
     @Provides
-    @Singleton
     public OkHttpClient provideOkHttpClient() {
         OkHttpClient client = new OkHttpClient();
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -44,7 +40,6 @@ public class ApiModule {
     }
 
     @Provides
-    @Singleton
     public Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .client(okHttpClient)
@@ -55,7 +50,6 @@ public class ApiModule {
     }
 
     @Provides
-    @Singleton
     public IApi provideApi(Retrofit retrofit) {
         return retrofit.create(IApi.class);
     }

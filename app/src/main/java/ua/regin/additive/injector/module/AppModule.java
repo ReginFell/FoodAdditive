@@ -16,7 +16,6 @@ public class AppModule {
         this.context = context;
     }
 
-    @Singleton
     @Provides
     protected Context provideContext() {
         return context;

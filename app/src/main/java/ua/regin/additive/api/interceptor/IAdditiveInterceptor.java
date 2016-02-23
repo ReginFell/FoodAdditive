@@ -1,13 +1,10 @@
-package ua.regin.additive.api;
+package ua.regin.additive.api.interceptor;
 
 import java.util.List;
 
-import retrofit.http.GET;
 import rx.Observable;
 import ua.regin.additive.entity.Additive;
 
-public interface IApi {
-
-    @GET("getAdditive.php")
+public interface IAdditiveInterceptor {
     Observable<List<Additive>> getAdditiveList();
 }

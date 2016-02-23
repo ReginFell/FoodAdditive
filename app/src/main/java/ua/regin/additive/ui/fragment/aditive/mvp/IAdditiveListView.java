@@ -4,5 +4,4 @@ import ua.regin.additive.ui.mvp.IView;
 
 public interface IAdditiveListView<D> extends IView<D> {
 
-
 }
