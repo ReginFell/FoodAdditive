@@ -1,7 +1,13 @@
 package ua.regin.additive.ui.mvp;
 
-public interface IView<P> {
+import android.content.Context;
 
-    P registerPresenter(P presenter);
+public interface IView<D> {
+
+    Context getContext();
+
+    void handleError(Exception e);
+
+    void setData(D d);
 
 }

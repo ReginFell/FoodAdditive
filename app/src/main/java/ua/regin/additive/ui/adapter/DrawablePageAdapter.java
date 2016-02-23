@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import ua.regin.additive.R;
+import ua.regin.additive.ui.fragment.aditive.AdditiveListFragment_;
 import ua.regin.additive.util.TabLayoutHelper;
 
 public class DrawablePageAdapter extends FragmentPagerAdapter implements TabLayoutHelper.IconPagerAdapter {
@@ -39,7 +40,24 @@ public class DrawablePageAdapter extends FragmentPagerAdapter implements TabLayo
 
     @Override
     public Fragment getItem(int position) {
-        return new Fragment();
+        Fragment fragment;
+        switch (position) {
+            case 0:
+                fragment = AdditiveListFragment_.builder().build();
+                break;
+            case 1:
+                fragment = AdditiveListFragment_.builder().build();
+                break;
+            case 2:
+                fragment = AdditiveListFragment_.builder().build();
+                break;
+            case 3:
+                fragment = AdditiveListFragment_.builder().build();
+                break;
+            default:
+                throw new RuntimeException("Not implemented fragment position");
+        }
+        return fragment;
     }
 
     @Override

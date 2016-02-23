@@ -1,12 +1,13 @@
 package ua.regin.additive.ui.mvp.impl;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import ua.regin.additive.ui.BaseActivity;
 import ua.regin.additive.ui.mvp.IPresenter;
-import ua.regin.additive.ui.mvp.IView;
+import ua.regin.additive.ui.mvp.IPresenterRegister;
 
-public class BaseMvpActivity extends BaseActivity implements IView<IPresenter> {
+public class BaseMvpActivity extends BaseActivity implements IPresenterRegister<IPresenter> {
     private IPresenter presenter;
 
     @Override

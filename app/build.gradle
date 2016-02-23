@@ -42,6 +42,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "com.android.support:appcompat-v7:$supportVersion"
     compile "com.android.support:recyclerview-v7:$supportVersion"
+    compile "com.android.support:cardview-v7:$supportVersion"
     compile "com.android.support:design:$supportVersion"
 
     //Android Annotations
@@ -56,4 +57,26 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.0.1'
     compile "com.trello:rxlifecycle:$rxLifecycleVersion"
     compile "com.trello:rxlifecycle-components:$rxLifecycleVersion"
+
+    //Retrofit
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    compile "com.squareup.okhttp:okhttp:2.5.0"
+    compile "com.squareup.okhttp:okhttp-urlconnection:2.5.0"
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'com.squareup.okhttp:logging-interceptor:2.6.0'
+
+    //OkHttp
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+
+    //OrmLite
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    //Stream API
+    compile 'com.annimon:stream:1.0.4'
+
 }

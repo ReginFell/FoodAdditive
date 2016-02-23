@@ -8,7 +8,6 @@ import ua.regin.additive.R;
 import ua.regin.additive.ui.BaseActivity;
 import ua.regin.additive.ui.fragment.MainFragment_;
 
-
 @EActivity(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
 

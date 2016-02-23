@@ -4,14 +4,14 @@ import android.os.Bundle;
 
 import ua.regin.additive.ui.BaseFragment;
 import ua.regin.additive.ui.mvp.IPresenter;
-import ua.regin.additive.ui.mvp.IView;
+import ua.regin.additive.ui.mvp.IPresenterRegister;
 
-public class BaseMvpFragment extends BaseFragment implements IView<IPresenter> {
+public class BaseMvpFragment<P extends IPresenter> extends BaseFragment implements IPresenterRegister<P> {
 
-    private IPresenter presenter;
+    private P presenter;
 
     @Override
-    public IPresenter registerPresenter(IPresenter presenter) {
+    public P registerPresenter(P presenter) {
         this.presenter = presenter;
         return presenter;
     }
@@ -30,5 +30,9 @@ public class BaseMvpFragment extends BaseFragment implements IView<IPresenter> {
         if (presenter != null) {
             presenter.onDestroy();
         }
+    }
+
+    public void handleError(Exception e) {
+
     }
 }
