@@ -15,10 +15,10 @@ public class BaseMvpFragment<P extends IPresenter> extends BaseFragment implemen
 
     private FragmentComponent fragmentComponent;
 
-    protected FragmentComponent injectComponent(IView view) {
+    protected <V extends IView> FragmentComponent injectComponent(V view) {
         fragmentComponent = DaggerFragmentComponent.builder()
                 .appComponent(Application.getApplication().getAppComponent())
-                .fragmentModule(new FragmentModule(view))
+                .fragmentModule(new FragmentModule<>(view))
                 .build();
         return fragmentComponent;
     }

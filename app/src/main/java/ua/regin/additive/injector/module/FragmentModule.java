@@ -2,20 +2,18 @@ package ua.regin.additive.injector.module;
 
 import dagger.Module;
 import dagger.Provides;
-import ua.regin.additive.injector.scope.FragmentScope;
-import ua.regin.additive.ui.mvp.IView;
 
 @Module
-public class FragmentModule {
+public class FragmentModule<V> {
 
-    private IView view;
+    private V view;
 
-    public FragmentModule(IView view) {
+    public FragmentModule(V view) {
         this.view = view;
     }
 
     @Provides
-    protected IView provideView() {
+    protected V provideView() {
         return view;
     }
 }

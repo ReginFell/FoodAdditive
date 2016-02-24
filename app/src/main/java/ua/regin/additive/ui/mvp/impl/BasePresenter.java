@@ -7,8 +7,10 @@ import ua.regin.additive.ui.mvp.IView;
 
 public class BasePresenter<V extends IView> implements IPresenter {
 
-    public BasePresenter(V v) {
+    private V view;
 
+    public BasePresenter(V view) {
+        this.view = view;
     }
 
     @Override
@@ -19,5 +21,9 @@ public class BasePresenter<V extends IView> implements IPresenter {
     @Override
     public void onDestroy() {
 
+    }
+
+    public V getView() {
+        return view;
     }
 }

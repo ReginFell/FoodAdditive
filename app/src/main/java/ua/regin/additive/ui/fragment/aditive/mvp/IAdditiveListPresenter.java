@@ -5,4 +5,5 @@ import ua.regin.additive.ui.mvp.IPresenter;
 public interface IAdditiveListPresenter extends IPresenter {
 
     void getAdditiveList();
+
 }
