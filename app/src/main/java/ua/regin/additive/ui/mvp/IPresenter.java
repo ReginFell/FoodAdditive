@@ -6,6 +6,10 @@ public interface IPresenter {
 
     void onCreate(Bundle savedInstanceState);
 
+    void onResume();
+
+    void onPause();
+
     void onDestroy();
 
 }

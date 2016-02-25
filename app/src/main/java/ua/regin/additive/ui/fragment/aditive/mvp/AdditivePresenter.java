@@ -1,5 +1,8 @@
 package ua.regin.additive.ui.fragment.aditive.mvp;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import java.util.List;
 
 import ua.regin.additive.api.interceptor.IAdditiveInterceptor;
@@ -16,6 +19,26 @@ public class AdditivePresenter extends BasePresenter<IAdditiveView<List<Additive
         super(view);
         this.view = view;
         this.additiveInterceptor = additiveInterceptor;
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d("onDestroy", "onDestroy");
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        Log.d("onCreate", "onCreate");
+    }
+
+    @Override
+    public void onResume() {
+        Log.d("onResume", "onResume");
+    }
+
+    @Override
+    public void onPause() {
+        Log.d("onPause", "onPause");
     }
 
     @Override

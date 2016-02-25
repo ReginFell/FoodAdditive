@@ -31,6 +31,7 @@ public class AdditiveListFragment extends BaseMvpFragment<IAdditivePresenter> im
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         injectComponent().plus(new AdditiveModule(this)).inject(this);
+        bindToLifecycle(presenter);
         presenter.getAdditiveList();
     }
 

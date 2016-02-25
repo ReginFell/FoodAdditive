@@ -8,6 +8,7 @@ import ua.regin.additive.api.IApi;
 import ua.regin.additive.api.interceptor.IAdditiveInterceptor;
 import ua.regin.additive.api.interceptor.impl.AdditiveInterceptor;
 import ua.regin.additive.entity.Additive;
+import ua.regin.additive.injector.scope.FragmentScope;
 import ua.regin.additive.ui.fragment.aditive.mvp.AdditivePresenter;
 import ua.regin.additive.ui.fragment.aditive.mvp.IAdditivePresenter;
 import ua.regin.additive.ui.fragment.aditive.mvp.IAdditiveView;

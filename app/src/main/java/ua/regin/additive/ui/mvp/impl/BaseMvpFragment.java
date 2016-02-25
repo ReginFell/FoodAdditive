@@ -8,7 +8,6 @@ import ua.regin.additive.injector.component.FragmentComponent;
 import ua.regin.additive.ui.BaseFragment;
 import ua.regin.additive.ui.mvp.IPresenter;
 import ua.regin.additive.ui.mvp.IPresenterRegister;
-import ua.regin.additive.ui.mvp.IView;
 
 public class BaseMvpFragment<P extends IPresenter> extends BaseFragment implements IPresenterRegister<P> {
 
@@ -24,9 +23,8 @@ public class BaseMvpFragment<P extends IPresenter> extends BaseFragment implemen
     }
 
     @Override
-    public P registerPresenter(P presenter) {
+    public void bindToLifecycle(P presenter) {
         this.presenter = presenter;
-        return presenter;
     }
 
     @Override
@@ -42,6 +40,22 @@ public class BaseMvpFragment<P extends IPresenter> extends BaseFragment implemen
         super.onDestroy();
         if (presenter != null) {
             presenter.onDestroy();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (presenter != null) {
+            presenter.onPause();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (presenter != null) {
+            presenter.onResume();
         }
     }
 
