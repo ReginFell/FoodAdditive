@@ -13,16 +13,16 @@ import javax.inject.Inject;
 
 import ua.regin.additive.R;
 import ua.regin.additive.entity.Additive;
-import ua.regin.additive.injector.module.PresenterModule;
-import ua.regin.additive.ui.fragment.aditive.mvp.IAdditiveListPresenter;
-import ua.regin.additive.ui.fragment.aditive.mvp.IAdditiveListView;
+import ua.regin.additive.injector.module.AdditiveModule;
+import ua.regin.additive.ui.fragment.aditive.mvp.IAdditivePresenter;
+import ua.regin.additive.ui.fragment.aditive.mvp.IAdditiveView;
 import ua.regin.additive.ui.mvp.impl.BaseMvpFragment;
 
 @EFragment(R.layout.fragment_additive_list)
-public class AdditiveListFragment extends BaseMvpFragment<IAdditiveListPresenter> implements IAdditiveListView<List<Additive>> {
+public class AdditiveListFragment extends BaseMvpFragment<IAdditivePresenter> implements IAdditiveView<List<Additive>> {
 
     @Inject
-    protected IAdditiveListPresenter presenter;
+    protected IAdditivePresenter presenter;
 
     @ViewById
     protected RecyclerView recyclerView;
@@ -30,7 +30,7 @@ public class AdditiveListFragment extends BaseMvpFragment<IAdditiveListPresenter
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        injectComponent(this).plus(new PresenterModule()).inject(this);
+        injectComponent().plus(new AdditiveModule(this)).inject(this);
         presenter.getAdditiveList();
     }
 
